@@ -1,3 +1,6 @@
+
+
+
 $(document).on("pagecreate","#pageone",function(){
     
   $('#submitButton').on("click", function(){
@@ -7,8 +10,8 @@ $(document).on("pagecreate","#pageone",function(){
 
 
 function submitText() {
-	var text = $('#textinput').val();
-	alert(random());
+    alert(random())
+	alert(sound())
 }
 
 function storeValue(key, value) {
@@ -17,4 +20,16 @@ function storeValue(key, value) {
 
 function random() {
 	return !Math.round(Math.random());
+}
+
+
+function sound(navigator) {
+    
+    if (random() == "false") {
+    navigator.notification.beep(1);
+    } else {
+    navigator.notification.beep(2);
+    }
+    
+    
 }
